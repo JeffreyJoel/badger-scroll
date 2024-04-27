@@ -51,7 +51,7 @@ We believe that this tool will be great for onboarding more users to the Scroll 
 
 ## Smart Contract
 
-You can find the Badger Frontend - [HERE](https://github.com/sogobanwo/scroll-badger-contract-)
+You can find the Badger Smart Contract - [HERE](https://github.com/sogobanwo/scroll-badger-contract-)
 
 ## SubGraph
 You can find the Badger Subgraph - [HERE](https://github.com/sogobanwo/scroll-badger-subgraph)
