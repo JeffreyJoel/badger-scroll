@@ -3,21 +3,21 @@
 import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
 import { Inter, Montserrat } from "next/font/google";
 
-export const SUPPORTED_CHAIN = 8082;
+export const SUPPORTED_CHAIN = 534351;
 
-export const SHARDEUM_ID = 8082;
+export const SCROLL_SEPOLIA_ID = 534351;
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const Shardeum = {
-  chainId: SHARDEUM_ID,
-  name: "Shardeum Sphinx 1.X",
-  currency: "SHM",
-  explorerUrl: "https://explorer-sphinx.shardeum.org/",
+  chainId: SCROLL_SEPOLIA_ID,
+  name: "Scroll",
+  currency: "ETH",
+  explorerUrl: "https://sepolia.scrollscan.com/",
   rpcUrl: process.env.NEXT_PUBLIC_SEPOLIA_RPC_URL,
 };
 
 const metadata = {
-  name: "Badger for Shardeum",
+  name: "Badger for Scroll",
   description: "No code token and nft deployment and interaction",
   url: "https://mywebsite.com",
   icons: ["https://avatars.mywebsite.com/"],
