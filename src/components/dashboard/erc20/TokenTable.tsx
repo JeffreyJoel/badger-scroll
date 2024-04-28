@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 // import { Spinner } from "@/components/ui/spinner";
 
@@ -17,7 +16,7 @@ export function TokenTable({
   const router = useRouter();
   return (
     <div className="relative overflow-x-auto rounded">
-      {tableData.length < 1 ? (
+      {tableData?.length < 1 ? (
         <div className="mt-6 w-full overflow-hidden">
           <p className="text-center text-red-700">You have not created any tokens</p>
           
@@ -43,7 +42,7 @@ export function TokenTable({
           </thead>
 
           <tbody>
-            {(fullPage ? tableData : tableData.slice(0, 5))?.map(
+            {(fullPage ? tableData : tableData?.slice(0, 5))?.map(
               (data, index) => (
                 <tr key={index} className="border-b dark:border-gray-70">
                   <th

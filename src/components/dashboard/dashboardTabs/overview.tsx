@@ -6,13 +6,13 @@ import { NFTOverview } from "../nft/NFTOverview";
 import { useGetAllERC20 } from "@/hooks/useERC20Factory";
 import NoToken from "../NoTokens";
 import { useGetAllERC721 } from "@/hooks/useERC721Factory";
+// import { MostRecentERC20s } from "../../explore/MostRecentERC20";
 
 export function OverviewComponent() {
   const [contractCreated, setContractCreated] = useState(false);
-  
 
   const { loading, data } = useGetAllERC20();
-  const { loading:loadingnft , nfts } = useGetAllERC721();
+  const { loading: loadingnft, nfts } = useGetAllERC721();
 
   // console.log(data);
 
@@ -27,14 +27,17 @@ export function OverviewComponent() {
           <h2 className="text-2xl font-bold lg:text-3xl">Overview</h2>
 
           <div className="mt-4 flex">
-            <InfoCard title="Contracts Deployed" content={data.length + nfts.length} />
+            <InfoCard
+              title="Contracts Deployed"
+              content={data.length + nfts.length}
+            />
             <InfoCard title="Tokens Deployed" content={data.length} />
             <InfoCard title="NFTs Deployed" content={nfts.length} />
           </div>
 
-          <TokenOverview fullPage={false}/>
+          <TokenOverview fullPage={false} />
           <NFTOverview fullPage={false} />
-          {/* <NFTOverview /> */}
+   
         </div>
       )}
       {/* {!contractCreated && (

@@ -15,6 +15,7 @@ import { getFactoryContract } from "@/constants/contracts";
 import { getProvider } from "@/constants/providers";
 import { useWeb3ModalProvider } from "@web3modal/ethers/react";
 import { useRef, useState } from "react";
+import toast from "react-hot-toast";
 
 export function CreateNftForm({ onSubmit }: { onSubmit?: () => void }) {
   const [file, setFile] = useState("");
@@ -89,6 +90,7 @@ export function CreateNftForm({ onSubmit }: { onSubmit?: () => void }) {
         onSubmit();
       }
       setLoading(false);
+      toast("NFT created");
 
     } catch (error) {
       console.error("error: ", error);

@@ -64,6 +64,8 @@ export const useGetAllERC20 = () => {
     contract
       .getCreatedFungibleTokenByAddress(address)
       .then((res) => {
+        console.log(res);
+        
         const converted = res.map((token: any) => ({
           name: token.name,
           symbol: token.symbol,
@@ -94,7 +96,7 @@ export const useGetAllERC20 = () => {
         const events = await readOnlyProvider
           .getLogs({
             ...filter,
-            fromBlock: 5726200,
+            fromBlock: 4091340,
           })
           .then((events) => {
             getTokens();

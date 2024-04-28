@@ -18,7 +18,7 @@ export async function getEvents(tokenAddress: string) {
 
   let events = await contract.queryFilter("Approval");
 
-  console.log(events);
+  // console.log(events);
 }
 export  function getLogs(tokenAddress: string) {
 
@@ -63,6 +63,8 @@ useEffect(() => {
 
   fetchLogs();
 }, []);
+console.log(logs);
+
 
 return logs;
 }

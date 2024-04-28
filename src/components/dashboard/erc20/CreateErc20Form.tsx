@@ -18,6 +18,7 @@ import {
 } from "@web3modal/ethers/react";
 import { getProvider } from "@/constants/providers";
 import { getFactoryContract } from "@/constants/contracts";
+import toast from "react-hot-toast";
 
 const CreateErc20Form = ({ onSubmit }: { onSubmit?: () => void }) => {
   const { walletProvider } = useWeb3ModalProvider();
@@ -62,7 +63,8 @@ const CreateErc20Form = ({ onSubmit }: { onSubmit?: () => void }) => {
       if (receipt.status === 1 && onSubmit) {
         onSubmit();
       }
-    setLoading(false)
+    setLoading(false);
+    toast("Token created");
 
     } catch (error) {
       console.error("error: ", error);

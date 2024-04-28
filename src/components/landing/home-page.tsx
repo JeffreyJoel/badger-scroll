@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 
 import heroImg from "../../../public/images/caeser.svg";
 import Link from "next/link";
+import { ArrowUpRightIcon } from "lucide-react";
 
 export const gluten = Gluten({ subsets: ["latin"] });
 
@@ -43,6 +44,15 @@ export const HomeSection: FC = () => {
                     translate="no"
                   >
                     Get Started
+                  </Button>
+                </Link>
+                <Link href="/explore">
+                  <Button
+                    variant={"outline"}
+                    className="h-12 min-w-[4rem] gap-2 rounded-xl border border-purple-700 px-4 py-3 font-bold text-foreground lg:min-w-[8rem] lg:rounded-2xl"
+                    translate="no"
+                  >
+                   Explore <ArrowUpRightIcon className="w-4"/>
                   </Button>
                 </Link>
               </Fade>

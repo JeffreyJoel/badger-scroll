@@ -90,7 +90,7 @@ export const useGetAllERC721 = () => {
         const events = await readOnlyProvider
           .getLogs({
             ...filter,
-            fromBlock: 5726200,
+            fromBlock: 4091340,
           })
           .then((events) => {
             getTokens();

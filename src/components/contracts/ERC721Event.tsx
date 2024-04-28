@@ -15,7 +15,7 @@ const EventTable: React.FC<EventTableProps> = ({ logs, address }) => (
   <div className="mt-2">
     <div className="flex justify-between items-center">
       <h2 className="mb-4 text-2xl font-bold">Successful events</h2>
-      <Link href={`https://explorer-sphinx.shardeum.org/address/${address}`} target="_blank" className="text-purple-600 hover:underline ">View all events</Link>
+      <Link href={`https://sepolia.scrollscan.com/address/${address}`} target="_blank" className="text-purple-600 hover:underline ">View all events</Link>
     </div>
     <div className="relative overflow-x-auto rounded">
       <table className="w-full text-left text-sm_ text-gray-500 dark:text-gray-400 rtl:text-right">
@@ -32,35 +32,37 @@ const EventTable: React.FC<EventTableProps> = ({ logs, address }) => (
             </th>
           </tr>
         </thead>
-        <tbody>
-          {logs.map((log, index) => (
-            <tr
-              key={index}
-              className="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+      {
+        logs.length > 1?   <tbody>
+        {logs.map((log, index) => (
+          <tr
+            key={index}
+            className="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+          >
+            <th
+              scope="row"
+              className="cursor-pointer whitespace-nowrap px-6 py-4 font-medium"
             >
-              <th
-                scope="row"
-                className="cursor-pointer whitespace-nowrap px-6 py-4 font-medium"
-              >
-                {log.name}
-              </th>
-              <td className="px-6 py-4">
-                {String(log.args[0]).substring(0, 8)}...
-                {String(log.args[0]).substring(
-                  String(log.args[0]).length - 9,
-                  String(log.args[0]).length
-                )}
-              </td>
-              <td className="px-6 py-4">
-                {String(log.args[1]).substring(0, 8)}...
-                {String(log.args[1]).substring(
-                  String(log.args[1]).length - 9,
-                  String(log.args[1]).length
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
+              {log.name}
+            </th>
+            <td className="px-6 py-4">
+              {String(log.args[0]).substring(0, 8)}...
+              {String(log.args[0]).substring(
+                String(log.args[0]).length - 9,
+                String(log.args[0]).length
+              )}
+            </td>
+            <td className="px-6 py-4">
+              {String(log.args[1]).substring(0, 8)}...
+              {String(log.args[1]).substring(
+                String(log.args[1]).length - 9,
+                String(log.args[1]).length
+              )}
+            </td>
+          </tr>
+        ))}
+      </tbody>:<div className="text-center text-3xl text-red-600">There are no events yet for this token</div>
+      }
       </table>
     </div>
   </div>

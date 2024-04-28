@@ -7,6 +7,7 @@ import "./globals.css";
 import { Gluten } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Web3Modal } from "@/connection";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,6 +39,7 @@ export default function RootLayout({
     > <Web3Modal>
       <body>
        {children}
+       <Toaster/>
       </body>
       </Web3Modal>
     </html>
