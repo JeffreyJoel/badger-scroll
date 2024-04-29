@@ -8,7 +8,7 @@ export const SUPPORTED_CHAIN = 534351;
 export const SCROLL_SEPOLIA_ID = 534351;
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-const Shardeum = {
+const Scroll = {
   chainId: SCROLL_SEPOLIA_ID,
   name: "Scroll",
   currency: "ETH",
@@ -25,7 +25,7 @@ const metadata = {
 
 createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
-  chains: [Shardeum],
+  chains: [Scroll],
   projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
   enableAnalytics: false, // Optional - defaults
   themeVariables: {

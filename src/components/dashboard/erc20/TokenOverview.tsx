@@ -16,7 +16,7 @@ export function TokenOverview({fullPage}:{fullPage:boolean}){
             Token Contracts
           </h3>
           <small className="text-lg font-light text-gray-200">
-            The list of Fungible token instances that you have deployed with badger on the Shardeum
+            The list of Fungible token instances that you have deployed with badger on the Scroll
             Network.
           </small>
         </div>
